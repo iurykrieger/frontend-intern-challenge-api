@@ -1,0 +1,19 @@
+{
+  "name": "frontend-intern-challenge-api",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "now dev",
+    "lint": "standard",
+    "lint:fix": "standard --fix",
+    "deploy:stg": "now",
+    "deploy:prd": "now --target production"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "helmet": "^3.18.0",
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {
+    "standard": "^12.0.1"
+  }
+}
