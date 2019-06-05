@@ -1,1 +1,11 @@
-{}
+{
+  "version": 2,
+  "name": "frontend-intern-challenge-api",
+  "builds": [
+    { "src": "www/**/*", "use": "@now/static" },
+    { "src": "api/index.js", "use": "@now/node-server" }
+  ],
+  "routes": [
+    { "src": "/.*", "dest": "api/index.js" }
+  ]
+}
