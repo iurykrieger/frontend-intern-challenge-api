@@ -25,12 +25,19 @@ function getRandomId () {
 function generateProduct (id) {
   const oldPrice = getRandomBetween(100, 450)
   const price = oldPrice - getRandomBetween(10, 50)
+  const installmentCount = 10
+  const installmentValue = price / installmentCount
   return {
     id,
     name: `Product Number ${id}`,
     image: `//imagens.pontofrio.com.br/Control/ArquivoExibir.aspx?IdArquivo=${getRandomId()}`,
     oldPrice,
-    price
+    price,
+    description: `Product long description number ${id} just to make more than one like of text.`,
+    installments: {
+      count: installmentCount,
+      value: installmentValue
+    }
   }
 }
 
