@@ -1,5 +1,6 @@
 const port = process.env.PORT || 3000
 const express = require('express')
+const cors = require('cors')
 const helmet = require('helmet')
 const bodyParser = require('body-parser')
 const { generateProductsByPage } = require('./products')
@@ -7,6 +8,10 @@ const { generateProductsByPage } = require('./products')
 const app = express()
 
 app.use(helmet())
+app.use(cors({
+  origin: '*',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}))
 app.use(bodyParser.json())
 
 app.get('/', (_, res) => {
